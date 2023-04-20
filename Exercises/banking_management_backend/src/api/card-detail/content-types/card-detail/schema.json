@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "card_details",
+  "info": {
+    "singularName": "card-detail",
+    "pluralName": "card-details",
+    "displayName": "card_detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total": {
+      "type": "integer"
+    },
+    "spent": {
+      "type": "integer"
+    },
+    "savings": {
+      "type": "integer"
+    },
+    "card_no": {
+      "type": "biginteger"
+    },
+    "expiry_date": {
+      "type": "date"
+    },
+    "imageUrl": {
+      "type": "string"
+    }
+  }
+}
