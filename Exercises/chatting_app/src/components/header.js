@@ -20,10 +20,12 @@ export function Header() {
       <Box
         sx={{
           width: "100%",
-          height: 70,
-          backgroundColor: "lightgray", // named color
+          height: 68,
+          boxShadow: '0px 1px 2px rgba(2, 17, 37, 0.12)',
+          
        
         }}
+        
       >
         <Grid
           container
@@ -31,6 +33,10 @@ export function Header() {
           justifyContent="space-between"
           alignItems="center"
           spacing={1}
+          style={{paddingLeft:'24px' ,
+          paddingTop:"12px",
+          paddingBottom:"12px",
+          paddingRight:'36px' ,}}
         >
           <Grid item xs={6} md={4}>
             <Box
@@ -40,7 +46,7 @@ export function Header() {
               }}
             >
               <img src={Logo} style={{ height: "32px", marginRight: "10px" }} />
-              <span style={{ fontSize: "20px" }}>E-Message</span>
+              <span style={{ fontSize: "20px",fontWeight:600 }}>E-Message</span>
             </Box>
           </Grid>
           <Grid item xs={6} md={4}>
@@ -51,8 +57,8 @@ export function Header() {
                 justifyContent: "flex-end",
               }}
             >
-              <span style={{ fontSize: "14px" }}>Last seen: 10 </span>
-              <span style={{ fontSize: "14px" }}>minutes ago</span>
+              <span style={{ fontSize: "14px" }}>Last seen: 10 minutes ago </span>
+              
             </Box>
           </Grid>
           <Grid item xs={3} md={2}>

@@ -5,6 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
+import { ContactList } from './contacts';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,16 +57,17 @@ function SideBar() {
   const classes = useStyles();
 
   return (
-    <List className={classes.root}>
-      {users.map((user) => (
-        <ListItem key={user.id} button>
-          <ListItemAvatar>
-            <Avatar alt={user.name} src={user.image} />
-          </ListItemAvatar>
-          <ListItemText primary={user.name} />
-        </ListItem>
-      ))}
-    </List>
+    // <List className={classes.root}>
+    //   {users.map((user) => (
+    //     <ListItem key={user.id} button>
+    //       <ListItemAvatar>
+    //         <Avatar alt={user.name} src={user.image} />
+    //       </ListItemAvatar>
+    //       <ListItemText primary={user.name} />
+    //     </ListItem>
+    //   ))}
+    // </List>
+    <ContactList className={classes.root}/>
   );
 }
 
