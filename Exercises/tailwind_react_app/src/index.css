@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.card{
+    @apply shadow-lg shadow-zinc-950 w-3/12 mx-auto rounded-md text-center mb-5
+}

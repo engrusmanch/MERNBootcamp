@@ -43,7 +43,12 @@ const useStyles = makeStyles((theme) => ({
         bottom: '0',
     },
     listItemText: {
-        width: '150px',
+        width: '60px',
+        flexWrap:true,
+        whiteSpace: 'wrap',
+        textOverflow: 'ellipsis'
+        
+        
     },
 
 }));
@@ -174,7 +179,7 @@ export function ContactList() {
                             primary={contact.name}
                             secondary={
                                 <React.Fragment>
-                                    <Typography component="span" variant="body2" color="textPrimary" noWrap sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                    <Typography component="span" variant="body2" color="textPrimary"   sx={{ overflow: 'hidden',  textOverflow: 'ellipsis',width: '60%',}}>
                                         {contact.lastMessage}
                                     </Typography>
                                 </React.Fragment>
