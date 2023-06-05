@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
         height: '100%', 
         maxWidth: 360, 
         display: 'flex', 
+        
         flexDirection: 'column', 
         overflow: 'auto', 
         boxShadow: '0px 0px 4px rgba(2, 17, 37, 0.04), 2px 0px 8px rgba(2, 17, 37, 0.04), 6px 0px 16px rgba(2, 17, 37, 0.04)'  // named color
@@ -43,16 +44,12 @@ const useStyles = makeStyles((theme) => ({
         bottom: '0',
     },
     listItemText: {
-        width: '60px',
+        width: '100px',
         flexWrap:true,
         whiteSpace: 'wrap',
         textOverflow: 'ellipsis'
-        
-        
     },
-
 }));
-
 export function ContactList() {
     const classes = useStyles();
 
@@ -154,14 +151,52 @@ export function ContactList() {
             lastMessage: 'Mera Ana Mushkil Hai Bro Acha Bat sun jana kahan hai',
             lastMessageTime: '12:30 AM',
         },
+        {
+            id: 13,
+            name: 'Talha Arshad',
+            avatar: 'https://i.pravatar.cc/150?img=12',
+            isOnline: true,
+            lastMessage: 'Mera Ana Mushkil Hai Bro Acha Bat sun jana kahan hai',
+            lastMessageTime: '12:30 AM',
+        },
+        {
+            id: 14,
+            name: 'Talha Arshad',
+            avatar: 'https://i.pravatar.cc/150?img=12',
+            isOnline: true,
+            lastMessage: 'Mera Ana Mushkil Hai Bro Acha Bat sun jana kahan hai',
+            lastMessageTime: '12:30 AM',
+        },
+        {
+            id: 15,
+            name: 'Talha Arshad',
+            avatar: 'https://i.pravatar.cc/150?img=12',
+            isOnline: true,
+            lastMessage: 'Mera Ana Mushkil Hai Bro Acha Bat sun jana kahan hai',
+            lastMessageTime: '12:30 AM',
+        },
+        {
+            id: 16,
+            name: 'Talha Arshad',
+            avatar: 'https://i.pravatar.cc/150?img=12',
+            isOnline: true,
+            lastMessage: 'Mera Ana Mushkil Hai Bro Acha Bat sun jana kahan hai',
+            lastMessageTime: '12:30 AM',
+        },
     ];
 
     return (
         <Box sx={{
-            width: '100%', height: '100%', maxWidth: 360, display: 'flex', flexDirection: 'column', overflow: 'auto', boxShadow: '0px 0px 4px rgba(2, 17, 37, 0.04), 2px 0px 8px rgba(2, 17, 37, 0.04), 6px 0px 16px rgba(2, 17, 37, 0.04)'  // named color
-        }}>
+            width: '100%',
+            height: '100%',
+            maxWidth: "85%",
+            maxHeight: "92vh",
+            padding: '0  0 20px 0', 
+            overflowY: "auto",
+            boxShadow: '0px 0px 4px rgba(2, 17, 37, 0.04), 2px 0px 8px rgba(2, 17, 37, 0.04), 6px 0px 16px rgba(2, 17, 37, 0.04)',
+          }}>
             <SearchInput />
-            <List style={{ maxWidth: 360, flex: 1 }} elevation={3}>
+            <List style={{ flex: 1 }} elevation={3}>
                 {contacts.map((contact) => (
                     <ListItem key={contact.id}>
                         <ListItemAvatar>
@@ -179,14 +214,14 @@ export function ContactList() {
                             primary={contact.name}
                             secondary={
                                 <React.Fragment>
-                                    <Typography component="span" variant="body2" color="textPrimary"   sx={{ overflow: 'hidden',  textOverflow: 'ellipsis',width: '60%',}}>
+                                    <Typography  variant="body2" color="#616C76" style={{ overflow: 'hidden',  textOverflow: 'ellipsis',width: '200px', whiteSpace:"nowrap"}}   >
                                         {contact.lastMessage}
                                     </Typography>
                                 </React.Fragment>
                             }
                         />
                         <ListItemSecondaryAction>
-                            <Typography component="span" variant="body2" color="textSecondary">
+                            <Typography  variant="body2" color="textSecondary">
                                 {contact.lastMessageTime}
                             </Typography>
                         </ListItemSecondaryAction>

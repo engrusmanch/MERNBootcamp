@@ -10,7 +10,7 @@ import { ContactList } from './contacts';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    // maxWidth: "10",
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -53,7 +53,7 @@ const users = [
   // add more users here
 ];
 
-function SideBar() {
+export function SideBar() {
   const classes = useStyles();
 
   return (
@@ -71,4 +71,4 @@ function SideBar() {
   );
 }
 
-export default SideBar;
+

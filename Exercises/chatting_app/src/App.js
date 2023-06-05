@@ -1,21 +1,16 @@
-import { useEffect } from "react";
-import { Header } from "./components/header";
-import Sidebar from "./components/sidebar";
 
-
+import React from 'react';
+import {auth} from './firebase_service';
+import {useAuthState} from 'react-firebase-hooks/auth';
+import Login from './Login';
+import MainPage from './MainPage';
 
 
 function App() {
-  useEffect(() => {
-    const html = document.getElementsByTagName('html')[0];
-    html.style.fontFamily = 'Plus Jakarta Sans'; // replace with your desired font family
-  }, []);
-  return(
-    <>
-    <Header/>
-    <Sidebar/>
-    </>
-  );
-};
+const [user] = useAuthState(auth);
+return (
+	user ? <MainPage/> : <Login/>
+);
+}
 
 export default App;

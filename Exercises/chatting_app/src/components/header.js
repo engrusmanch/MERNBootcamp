@@ -1,11 +1,13 @@
-import { Avatar, Box, Grid } from "@mui/material";
+import { Avatar, Box, Grid, useMediaQuery } from "@mui/material";
 import Logo from "../assets/Logo.svg";
 import userAvatar from "../assets/Photo.png";
 import { DotsThree, DotsThreeVertical, Gear } from "@phosphor-icons/react";
 import { useState } from "react";
 import { UserDrawer } from "./drawer";
 
-export function Header() {
+export  function Header() {
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   function handleClickOnDrawer(){
     setIsDrawerOpen(true);
@@ -19,13 +21,10 @@ export function Header() {
     <>
       <Box
         sx={{
-          width: "100%",
+          width: '100%',
           height: 68,
           boxShadow: '0px 1px 2px rgba(2, 17, 37, 0.12)',
-          
-       
         }}
-        
       >
         <Grid
           container
@@ -33,53 +32,51 @@ export function Header() {
           justifyContent="space-between"
           alignItems="center"
           spacing={1}
-          style={{paddingLeft:'24px' ,
-          paddingTop:"12px",
-          paddingBottom:"12px",
-          paddingRight:'36px' ,}}
+          sx={{
+            paddingLeft: isMobile ? '16px' : '24px',
+            paddingTop: '12px',
+            paddingBottom: '12px',
+            paddingRight: isMobile ? '16px' : '36px',
+          }}
         >
-          <Grid item xs={6} md={4}>
+          <Grid item xs={6} sm={4} md={4} lg={4}>
             <Box
               sx={{
-                display: "flex",
-                alignItems: "center",
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
-              <img src={Logo} style={{ height: "32px", marginRight: "10px" }} />
-              <span style={{ fontSize: "20px",fontWeight:600 }}>E-Message</span>
+              <img src={Logo} style={{ height: '32px', marginRight: '10px' }} />
+              <span style={{ fontSize: '20px', fontWeight: 600 }}>E-Message</span>
             </Box>
           </Grid>
-          <Grid item xs={6} md={4}>
+          <Grid item xs={6} sm={4} md={4} lg={4}>
             <Box
               sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
               }}
             >
-              <span style={{ fontSize: "14px" }}>Last seen: 10 minutes ago </span>
-              
+              <span style={{ fontSize: '14px' }}>Last seen: 10 minutes ago</span>
             </Box>
           </Grid>
-          <Grid item xs={3} md={2}>
+          <Grid item xs={6} sm={4} md={4} lg={4}>
             <Box
               sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
               }}
             >
               <Gear size={25} />
-              <DotsThreeVertical size={25} onClick={handleClickOnDrawer}/>
+              <DotsThreeVertical size={25} onClick={handleClickOnDrawer} />
               <Avatar src={userAvatar} />
             </Box>
           </Grid>
-         
         </Grid>
       </Box>
-      
-{isDrawerOpen&&<UserDrawer open={isDrawerOpen} onClose={handleCloseDrawer} selectedItem={selectedItem} />
-}
+      {isDrawerOpen && <UserDrawer open={isDrawerOpen} onClose={handleCloseDrawer} selectedItem={selectedItem} />}
     </>
   );
 }
